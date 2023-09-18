@@ -37,7 +37,7 @@ export default function Header() {
                 Sign In
               </Button>
             </Link>
-            <Link to="/">
+            <Link to="/dashboard">
               <Button
                 className="nav-button"
                 sx={{ color: "black", backgroundColor: "transparent" }}
