@@ -21,9 +21,9 @@ const AuthForm = ({ formType = "signin", setToken }) => {
   const [message, setMessage] = useState("");
 
 
-  useEffect(() => {
-    console.log({message});
-  }, [message]);
+  // useEffect(() => {
+  //   console.log({message});
+  // }, [message]);
 
   const content = formType === "signup" ? signupContent : signinContent;
 
@@ -41,7 +41,9 @@ const AuthForm = ({ formType = "signin", setToken }) => {
         } else {
           setToken(res.data.token);
         }
-      });
+      }).catch((error) => {
+        console.error('Axios error occurred', error)
+      })
   };
 
   return (
@@ -49,17 +51,15 @@ const AuthForm = ({ formType = "signin", setToken }) => {
       <form onSubmit={handleSubmit}>
         <h2>{content.title}</h2>
         <label className={styles.label}>
-          Email
-          <input type="email" onChange={(e) => setEmail(e.target.value)} />
+          <input className={styles.textBox} type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
         </label>
         <label className={styles.label}>
-          Password
-          <input
-            type="password"
+          <input className={styles.textBox}
+            type="password" placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <input type="submit" value={content.buttonText} />
+        <input type="submit" value={content.buttonText} className={styles.submit}/>
       </form>
     </>
   );

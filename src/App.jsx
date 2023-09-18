@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import Home from "./components/Home/Home";
 import AuthForm from "./components/Login/Auth";
 import Dashboard from "./components/Dashboard";
 import Header from "./components/Header";
@@ -28,6 +29,7 @@ function App() {
     <>
       <Header />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/signup" element={<AuthForm formType="signup" />} />
         <Route
           path="/signin"
