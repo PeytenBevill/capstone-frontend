@@ -36,7 +36,7 @@ function App() {
           element={<AuthForm setToken={setToken} formType="signin" />}
         />
         <Route
-          path="/"
+          path="/dashboard"
           element={<ProtectedRoute component={Dashboard} token={token} />}
         />
       </Routes>

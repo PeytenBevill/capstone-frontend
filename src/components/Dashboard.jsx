@@ -11,6 +11,7 @@ const Dashboard = () => {
 
   return (
     <>
+    <h1>Dashboard</h1>
       <div>
         {data.map((x) => (
           <h2 key={x.id}>{x.email}</h2>

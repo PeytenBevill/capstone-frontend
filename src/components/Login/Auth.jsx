@@ -21,9 +21,9 @@ const AuthForm = ({ formType = "signin", setToken }) => {
   const [message, setMessage] = useState("");
 
 
-  // useEffect(() => {
-  //   console.log({message});
-  // }, [message]);
+  useEffect(() => {
+    console.log({message});
+  }, [message]);
 
   const content = formType === "signup" ? signupContent : signinContent;
 
