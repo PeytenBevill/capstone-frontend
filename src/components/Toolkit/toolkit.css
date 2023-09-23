@@ -1,0 +1,109 @@
+.toolkit-button {
+  margin: 13% 20%;
+  background-color: #1f76d2;
+  color: white;
+}
+
+.toolkit-button:hover {
+  color: black;
+}
+
+.tools {
+  position: fixed;
+  display: flex;
+  top: 20%;
+  left: 5%;
+  background-color: white;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.colors {
+  display: grid;
+  margin-left: 30%;
+  grid-template-columns: 4em 4em 4em;
+  grid-template-rows: 4em 4em 4em;
+}
+
+.button1,
+.button2, .button3, .button4, .button5, .button6 {
+  height: 2em;
+  width: 2em;
+  border: none;
+  cursor: pointer;
+  margin-right: 1%;
+}
+
+.button1 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  background: linear-gradient(
+    to right,
+    #bfd0e0 0%,
+    #bfd0e0 50%,
+    #b8b3be 50%,
+    #b8b3be 100%
+  );
+}
+
+.button2 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  background: linear-gradient(
+    to right,
+    #093824 0%,
+    #093824 50%,
+    #208394 50%,
+    #208394 100%
+  );
+}
+
+.button3 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  background: linear-gradient(
+    to right,
+    #819595 0%,
+    #819595 50%,
+    #B1B6A6 50%,
+    #B1B6A6 100%
+  );
+}
+
+.button4 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  background: linear-gradient(
+    to right,
+    #603140 0%,
+    #603140 50%,
+    #D9D0DE 50%,
+    #D9D0DE 100%
+  );
+}
+
+.button5 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  background: linear-gradient(
+    to right,
+    #F7B05B 0%,
+    #F7B05B 50%,
+    #0C1713 50%,
+    #0C1713 100%
+  );
+}
+
+.button6 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  background: linear-gradient(
+    to right,
+    #739E82 0%,
+    #739E82 50%,
+    #F3FFB6 50%,
+    #F3FFB6 100%
+  );
+}

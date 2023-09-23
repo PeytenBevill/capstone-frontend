@@ -1,28 +1,29 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./authForm.module.css";
+import { useNavigate } from "react-router-dom";
 
 const signupContent = {
-  title: "Sign Up",
+  title: "Create your account today",
   route: "signup",
-  buttonText: "Sign Up!",
+  buttonText: "Sign up",
 };
 
 const signinContent = {
-  title: "Sign In",
+  title: "Welcome back",
   route: "signin",
-  buttonText: "Sign In",
+  buttonText: "Sign in",
 };
 
-const AuthForm = ({ formType = "signin", setToken }) => {
+const AuthForm = ({ formType = "signin", setToken, setUserId }) => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const [message, setMessage] = useState("");
 
-
   useEffect(() => {
-    console.log({message});
+    console.log({ message });
   }, [message]);
 
   const content = formType === "signup" ? signupContent : signinContent;
@@ -40,27 +41,43 @@ const AuthForm = ({ formType = "signin", setToken }) => {
           setMessage(res.data.message);
         } else {
           setToken(res.data.token);
+          setUserId(res.data.user_id);
+          navigate("/dashboard");
         }
-      }).catch((error) => {
-        console.error('Axios error occurred', error)
       })
+      .catch((error) => {
+        console.error("Axios error occurred", error);
+      });
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <h2>{content.title}</h2>
-        <label className={styles.label}>
-          <input className={styles.textBox} type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-        </label>
-        <label className={styles.label}>
-          <input className={styles.textBox}
-            type="password" placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
+      <div className={styles.bgLogin}>
+        <form onSubmit={handleSubmit} className={styles.formBox}>
+          <h2>{content.title}</h2>
+          <label className={styles.label}>
+            <input
+              className={styles.textBox}
+              type="email"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </label>
+          <label className={styles.label}>
+            <input
+              className={styles.textBox}
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </label>
+          <input
+            type="submit"
+            value={content.buttonText}
+            className={styles.submit}
           />
-        </label>
-        <input type="submit" value={content.buttonText} className={styles.submit}/>
-      </form>
+        </form>
+      </div>
     </>
   );
 };

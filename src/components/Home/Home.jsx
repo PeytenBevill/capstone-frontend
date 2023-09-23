@@ -31,8 +31,8 @@ const Home = () => {
           <p>Created by Peyten Bevill</p>
         </a>
         <p className="spacer">|</p>
-        <a href="https://www.freepik.com/free-vector/pets-cafe-composition-with-silhouette-interior-cafeteria-with-houseplants-people-drinking-coffee-with-animals-vector-illustration_33771030.htm#query=cartoon%20pet%20sitting&position=8&from_view=search&track=ais">
-          Image by macrovector on Freepik
+        <a href='https://www.google.com/search?q=freepik&oq=free&aqs=chrome.0.35i39i355i650j46i39i199i465i650j69i57j69i64j69i60l3j69i65.983j0j7&sourceid=chrome&ie=UTF-8' target="_blank">
+          All images by macrovector on Freepik
         </a>
       </footer>
     </>

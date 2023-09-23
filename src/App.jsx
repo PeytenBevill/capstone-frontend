@@ -8,6 +8,8 @@ import "./App.css";
 
 function App() {
   const [token, setToken] = useState("");
+  const [user_id, setUserId] = useState(null)
+  console.log(user_id)
   const checkAuth = (token) => {
     if(token.length){
       return true
@@ -25,6 +27,10 @@ function App() {
     );
   };
 
+  const handleLogin = (user_id) => {
+    setUserId(user_id);
+  };
+
   return (
     <>
       <Header />
@@ -33,11 +39,11 @@ function App() {
         <Route path="/signup" element={<AuthForm formType="signup" />} />
         <Route
           path="/signin"
-          element={<AuthForm setToken={setToken} formType="signin" />}
+          element={<AuthForm onLogin={handleLogin} setToken={setToken} setUserId={setUserId} formType="signin" />}
         />
         <Route
           path="/dashboard"
-          element={<ProtectedRoute component={Dashboard} token={token} />}
+          element={<ProtectedRoute component={Dashboard} token={token} user_id={user_id} />}
         />
       </Routes>
     </>

@@ -1,11 +1,27 @@
-form {
+.bgLogin {
+  background-image: url('./bglogin.jpg');
+  height: 755px;
+  width: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: none;
+  margin-bottom: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formBox {
+  margin-left: 5%;
+  margin-bottom: 14%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #dedede;
+  background-color: #F6F2EE;
   border-radius: 5px;
-  margin: 10% 32%;
+  height: 200px;
+  width: 400px;
   padding: 4%;
   box-shadow: 0px 6px 11px 0px #acacac;
   font-family: sans-serif;
@@ -21,6 +37,7 @@ form {
   width: 200px;
   border: none;
   border-radius: 5px;
+  background-color: white;
 }
 
 .submit {
@@ -29,9 +46,10 @@ form {
   padding: 2% 3%;
   cursor: pointer;
   margin-top: 2%;
+  background-color: white;
 }
 
 .submit:hover {
-  background-color: rgb(94, 94, 243);
+  background-color: #898930;
   color: white;
 }

@@ -18,9 +18,18 @@ export default function Header() {
         >
           <Toolbar className="header">
             <PawPrint size={32} />
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              PetGuide
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'black', fontWeight: 'bold'}}>
+              Pet<span style={{color: '#A79D4D', fontWeight: 'bold'}}>Guide</span>
             </Typography>
+            <Link to='/'>
+            <Button
+                className="nav-button"
+                sx={{ color: "black", backgroundColor: "transparent" }}
+              >
+                Home
+              </Button>
+            </Link>
+
             <Link to="/signup">
               <Button
                 className="nav-button"
