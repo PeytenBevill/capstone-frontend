@@ -22,18 +22,30 @@
 
 .colors {
   display: grid;
-  margin-left: 30%;
-  grid-template-columns: 4em 4em 4em;
-  grid-template-rows: 4em 4em 4em;
+  /* margin-left: 0; */
+  grid-template-columns: 4em 4em 4em 4em;
+  grid-template-rows: 4em 4em;
 }
 
 .button1,
-.button2, .button3, .button4, .button5, .button6 {
+.button2, .button3, .button4, .button5, .button6, .button7, .button8 {
   height: 2em;
   width: 2em;
   border: none;
   cursor: pointer;
   margin-right: 1%;
+}
+
+.button8:focus,
+.button1:focus,
+.button2:focus,
+.button3:focus,
+.button4:focus,
+.button5:focus,
+.button6:focus,
+.button7:focus {
+  border: solid 2px #1F76D2;
+  border-radius: 5px;
 }
 
 .button1 {
@@ -73,19 +85,19 @@
 }
 
 .button4 {
-  grid-column: 1/2;
-  grid-row: 2/3;
+  grid-column: 4/5;
+  grid-row: 1/2;
   background: linear-gradient(
     to right,
-    #603140 0%,
-    #603140 50%,
-    #D9D0DE 50%,
-    #D9D0DE 100%
+    #6F2DBD 0%,
+    #6F2DBD 50%,
+    #B298DC 50%,
+    #B298DC 100%
   );
 }
 
 .button5 {
-  grid-column: 2/3;
+  grid-column: 1/2;
   grid-row: 2/3;
   background: linear-gradient(
     to right,
@@ -97,7 +109,7 @@
 }
 
 .button6 {
-  grid-column: 3/4;
+  grid-column: 2/3;
   grid-row: 2/3;
   background: linear-gradient(
     to right,
@@ -105,5 +117,29 @@
     #739E82 50%,
     #F3FFB6 50%,
     #F3FFB6 100%
+  );
+}
+
+.button7 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  background: linear-gradient(
+    to right,
+    #5A0002 0%,
+    #5A0002 50%,
+    #33673B 50%,
+    #33673B 100%
+  );
+}
+
+.button8 {
+  grid-column: 4/5;
+  grid-row: 2/3;
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #ffffff 50%,
+    #d6d6d6 50%,
+    #d6d6d6 100%
   );
 }
