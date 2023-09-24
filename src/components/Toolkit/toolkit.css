@@ -20,9 +20,12 @@
   align-items: center;
 }
 
+.greeting {
+  margin-right: 15%;
+}
+
 .colors {
   display: grid;
-  /* margin-left: 0; */
   grid-template-columns: 4em 4em 4em 4em;
   grid-template-rows: 4em 4em;
 }
@@ -142,4 +145,29 @@
     #d6d6d6 50%,
     #d6d6d6 100%
   );
+}
+
+.deleteGrid {
+  display: grid;
+  grid-template-columns: 1.75fr .25fr;
+  /* margin-right: 5%; */
+}
+
+.postsToDelete {
+  grid-column: 1/2;
+  margin-bottom: 3%;
+}
+
+.linkBox {
+  margin-top: 10%;
+  border: 3px solid black;
+  border-radius: 15px;
+  height: 3%;
+}
+
+
+
+.copyButton {
+  border-bottom-right-radius: 11px;
+  border-top-right-radius: 11px;
 }

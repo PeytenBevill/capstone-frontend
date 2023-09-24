@@ -107,6 +107,25 @@ const Dashboard = ({ user_id }) => {
       });
   };
 
+  const handleDelete = (id) => {
+    axios
+      .delete(
+        `https://capstone-backend-topaz.vercel.app/posts/${user_id}/${id}`
+      )
+      .then(() => {
+        console.log(`Post with id ${id} deleted successfully.`);
+        fetch(`https://capstone-backend-topaz.vercel.app/posts/${user_id}`)
+          .then((res) => res.json())
+          .then((updatedData) => {
+            console.log("Updated data:", updatedData);
+            setData(updatedData);
+          });
+      })
+      .catch((error) => {
+        console.error("Error deleting post:", error);
+      });
+  };
+
   return (
     <>
       <div className="screenBody">
@@ -114,6 +133,8 @@ const Dashboard = ({ user_id }) => {
           className="toolkit"
           handlePostColor={handlePostColor}
           firstName={firstName}
+          data={data}
+          handleDelete={handleDelete}
         />
         {petNames.map((petName, index) => (
           <div key={index} className="top-of-page">
