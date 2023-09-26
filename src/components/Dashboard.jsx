@@ -17,6 +17,7 @@ const Dashboard = ({ user_id }) => {
   const [postBodyVisible, setPostBodyVisible] = useState(data.map(() => false));
   const [petNames, setPetNames] = useState([]);
   const [firstName, setFirstName] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   const [titleColor, setTitleColor] = useState("");
   const [bodyColor, setBodyColor] = useState("");
@@ -54,10 +55,22 @@ const Dashboard = ({ user_id }) => {
   };
 
   useEffect(() => {
-    fetch(`https://capstone-backend-topaz.vercel.app/posts/${user_id}`)
-      .then((res) => res.json())
-      .then((data) => setData(data));
+    if (user_id !== null) {
+      setIsLoading(true);
+  
+      fetch(`https://capstone-backend-topaz.vercel.app/posts/${user_id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setData(data);
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error fetching posts:", error);
+          setIsLoading(false);
+        });
+    }
   }, [user_id]);
+  
 
   useEffect(() => {
     fetch(`https://capstone-backend-topaz.vercel.app/posts/colors/${user_id}`)
@@ -148,7 +161,9 @@ const Dashboard = ({ user_id }) => {
             </h2>
           </div>
         ))}
-        {data.length === 0 ? (
+         {isLoading ? (
+          <h3 className="loading">Loading...</h3>
+        ) : data.length === 0 ? (
           <h3 className="no-posts">Hmmm... nothing has been added yet</h3>
         ) : (
           data.map((x, index) => (

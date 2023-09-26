@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import Cookies from "js-cookie";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -9,10 +10,17 @@ import { PawPrint } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 import "./header.css";
 
-export default function Header() {
+export default function Header({ authToken, setToken }) {
   const location = useLocation();
 
   const isPublishedDashboard = location.pathname.startsWith("/published/");
+
+  const handleLogOut = () => {
+    if(authToken) {
+      setToken(null)
+      localStorage.removeItem("authToken");
+    }
+  }
 
   return (
     <>
@@ -61,7 +69,18 @@ export default function Header() {
                     Sign Up
                   </Button>
                 </Link>
-                <Link to="/signin">
+                {authToken ? (
+                <Link to="/">
+                  <Button
+                    className="nav-button"
+                    sx={{ color: "black", backgroundColor: "transparent" }}
+                    onClick={handleLogOut}
+                  >
+                    Log Out
+                  </Button>
+                </Link>
+                ) : (
+                  <Link to="/signin">
                   <Button
                     className="nav-button"
                     sx={{ color: "black", backgroundColor: "transparent" }}
@@ -69,6 +88,8 @@ export default function Header() {
                     Sign In
                   </Button>
                 </Link>
+                )}
+
                 <Link to="/dashboard">
                   <Button
                     className="nav-button"

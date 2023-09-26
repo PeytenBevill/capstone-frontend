@@ -8,20 +8,16 @@ import PublishedDashboard from "./components/PublishedDashboard/PublishedDashboa
 import "./App.css";
 
 function App() {
-  const [token, setToken] = useState("");
-  const [user_id, setUserId] = useState(null);
-  console.log(user_id);
-  const checkAuth = (token) => {
-    if (token.length) {
-      return true;
-    }
+  const [authToken, setToken] = useState(localStorage.getItem("authToken") || "");
+  const [user_id, setUserId] = useState(localStorage.getItem("user_id") || "");
 
-    return false;
+  const checkAuth = () => {
+    return authToken !== "";
   };
 
   const ProtectedRoute = (props) => {
-    const { component: Component, token, ...rest } = props;
-    return checkAuth(token) === true ? (
+    const { component: Component, authToken, ...rest } = props;
+    return checkAuth(authToken) === true ? (
       <Component {...rest} />
     ) : (
       <Navigate to="/signin" />
@@ -34,7 +30,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header authToken={authToken} setToken={setToken} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<AuthForm formType="signup" />} />
@@ -54,7 +50,7 @@ function App() {
           element={
             <ProtectedRoute
               component={Dashboard}
-              token={token}
+              authToken={authToken}
               user_id={user_id}
             />
           }

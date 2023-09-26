@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-.formBox {
+.signInBox {
   margin-left: 5%;
   margin-bottom: 14%;
   display: flex;
@@ -27,6 +27,28 @@
   font-family: sans-serif;
 }
 
+.signUpBox {
+  margin-left: 5%;
+  margin-bottom: 14%;
+  background-color: #F6F2EE;
+  border-radius: 5px;
+  height: 230px;
+  width: 400px;
+  padding: 4%;
+  box-shadow: 0px 6px 11px 0px #acacac;
+  font-family: sans-serif;
+}
+
+.inputSignUp {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.signUpHeader {
+  text-align: center;
+}
+
 .label {
   display: block;
   margin: 2%;
@@ -35,6 +57,108 @@
 .textBox {
   height: 30px;
   width: 200px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.label2 {
+  margin: 2%;
+  margin-left: 9%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.textBox2 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  height: 30px;
+  width: 150px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.label3 {
+  margin: 2%;
+  margin-left: 9%;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.textBox3 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  height: 30px;
+  width: 150px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.label4 {
+  margin: 2%;
+  margin-left: 9%;
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+.textBox4 {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  height: 30px;
+  width: 150px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.label5 {
+  margin: 2%;
+  margin-left: 9%;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.textBox5 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  height: 30px;
+  width: 150px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.label6 {
+  margin: 2%;
+  margin-left: 9%;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.textBox6 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  height: 30px;
+  width: 150px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.label7 {
+  margin: 2%;
+  margin-left: 9%;
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+.textBox7 {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  height: 30px;
+  width: 150px;
   border: none;
   border-radius: 5px;
   background-color: white;
@@ -50,6 +174,22 @@
 }
 
 .submit:hover {
+  background-color: #898930;
+  color: white;
+}
+
+.submit2 {
+  grid-column: 1/3;
+  grid-row: 4/5;
+  border: none;
+  border-radius: 5px;
+  padding: 2% 3%;
+  cursor: pointer;
+  margin-top: 2%;
+  background-color: white;
+}
+
+.submit2:hover {
   background-color: #898930;
   color: white;
 }
