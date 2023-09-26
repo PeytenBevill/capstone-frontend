@@ -42,6 +42,7 @@ const Toolkit = (props) => {
   };
 
   let inputURL = `https://papaya-paprenjak-1f5aa6.netlify.app/published/${props.user_id}`
+  console.log(props.user_id)
 
 
   const copyToClipboard = () => {
