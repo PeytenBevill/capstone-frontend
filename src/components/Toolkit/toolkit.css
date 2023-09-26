@@ -159,15 +159,27 @@
 }
 
 .linkBox {
-  margin-top: 10%;
-  border: 3px solid black;
-  border-radius: 15px;
+  margin-top: 4%;
+  box-shadow: 0px 2px 6px 0px #acacac;
+  border-radius: 10px;
   height: 3%;
+  padding: 3%;
+  width: 210px;
 }
 
-
+.url {
+  width: 155px;
+  margin-top: 0;
+  /* margin-bottom: 4%; */
+  height: 30px;
+}
 
 .copyButton {
-  border-bottom-right-radius: 11px;
-  border-top-right-radius: 11px;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 3%;
+  height: 40px;
+  border: none;
+  margin-left: 7%;
+  cursor: pointer;
 }

@@ -135,6 +135,7 @@ const Dashboard = ({ user_id }) => {
           firstName={firstName}
           data={data}
           handleDelete={handleDelete}
+          user_id={user_id}
         />
         {petNames.map((petName, index) => (
           <div key={index} className="top-of-page">

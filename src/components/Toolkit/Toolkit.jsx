@@ -41,6 +41,19 @@ const Toolkit = (props) => {
     });
   };
 
+  let inputURL = `https://main--papaya-paprenjak-1f5aa6.netlify.app/published/${props.user_id}`
+
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(inputURL)
+      .then(() => {
+        alert("Link copied to clipboard!");
+      })
+      .catch((error) => {
+        console.error("Error copying text to clipboard:", error);
+      });
+  };
+
   return (
     <>
       <Button
@@ -85,9 +98,11 @@ const Toolkit = (props) => {
                 </>
               ))}
           </div>
+          <p style={{textDecoration: 'underline', marginTop: '10%'}}>Share your instructions:</p>
           <div className="linkBox">
-            <span className="url">fakeurlplaceholder.com</span>
-            <button className="copyButton"><CopySimple size={18} /></button>
+            {/* <span className="url">https://main--papaya-paprenjak-1f5aa6.netlify.app/published/{props.user_id}</span> */}
+            <input className="url" type="text" value={inputURL} />
+            <button className="copyButton" onClick={copyToClipboard}><CopySimple size={18} /></button>
           </div>
         </div>
       )}

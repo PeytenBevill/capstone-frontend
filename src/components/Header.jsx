@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -9,6 +10,10 @@ import { Link } from "react-router-dom";
 import "./header.css";
 
 export default function Header() {
+  const location = useLocation();
+
+  const isPublishedDashboard = location.pathname.startsWith("/published/");
+
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -18,42 +23,62 @@ export default function Header() {
         >
           <Toolbar className="header">
             <PawPrint size={32} />
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'black', fontWeight: 'bold'}}>
-              Pet<span style={{color: '#A79D4D', fontWeight: 'bold'}}>Guide</span>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ flexGrow: 1, color: "black", fontWeight: "bold" }}
+            >
+              Pet
+              <span style={{ color: "#A79D4D", fontWeight: "bold" }}>
+                Guide
+              </span>
             </Typography>
-            <Link to='/'>
-            <Button
-                className="nav-button"
-                sx={{ color: "black", backgroundColor: "transparent" }}
-              >
-                Home
-              </Button>
-            </Link>
+            {isPublishedDashboard ? (
+              <Link to="/">
+                <Button
+                  className="nav-button"
+                  sx={{ color: "black", backgroundColor: "transparent" }}
+                >
+                  Home
+                </Button>
+              </Link>
+            ) : (
+              <>
+                <Link to="/">
+                  <Button
+                    className="nav-button"
+                    sx={{ color: "black", backgroundColor: "transparent" }}
+                  >
+                    Home
+                  </Button>
+                </Link>
 
-            <Link to="/signup">
-              <Button
-                className="nav-button"
-                sx={{ color: "black", backgroundColor: "transparent" }}
-              >
-                Sign Up
-              </Button>
-            </Link>
-            <Link to="/signin">
-              <Button
-                className="nav-button"
-                sx={{ color: "black", backgroundColor: "transparent" }}
-              >
-                Sign In
-              </Button>
-            </Link>
-            <Link to="/dashboard">
-              <Button
-                className="nav-button"
-                sx={{ color: "black", backgroundColor: "transparent" }}
-              >
-                Dashboard
-              </Button>
-            </Link>
+                <Link to="/signup">
+                  <Button
+                    className="nav-button"
+                    sx={{ color: "black", backgroundColor: "transparent" }}
+                  >
+                    Sign Up
+                  </Button>
+                </Link>
+                <Link to="/signin">
+                  <Button
+                    className="nav-button"
+                    sx={{ color: "black", backgroundColor: "transparent" }}
+                  >
+                    Sign In
+                  </Button>
+                </Link>
+                <Link to="/dashboard">
+                  <Button
+                    className="nav-button"
+                    sx={{ color: "black", backgroundColor: "transparent" }}
+                  >
+                    Dashboard
+                  </Button>
+                </Link>
+              </>
+            )}
           </Toolbar>
         </AppBar>
       </Box>
