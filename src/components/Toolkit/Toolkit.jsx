@@ -41,7 +41,7 @@ const Toolkit = (props) => {
     });
   };
 
-  let inputURL = `https://main--papaya-paprenjak-1f5aa6.netlify.app/published/${props.user_id}`
+  let inputURL = `https://papaya-paprenjak-1f5aa6.netlify.app//published/${props.user_id}`
 
 
   const copyToClipboard = () => {
